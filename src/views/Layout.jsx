@@ -11,6 +11,7 @@ module.exports = function Layout({ children, user }) {
         <link href="/css/style.css" rel="stylesheet" />
         <link href="/css/output.css" rel="stylesheet" />
 
+        {/* <script defer src="../path/to/flowbite/dist/flowbite.min.js"></script> */}
         <script defer src="/js/auth.js" />
         <title>{ }</title>
       </head>
