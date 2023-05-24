@@ -15,8 +15,12 @@ const app = express();
 
 const indexRoutes = require('./src/routes/index.routes');
 const authRoutes = require('./src/routes/auth.routes');
+const mainRouter = require('./src/routes/mainPage.router');
 
 const { PORT = 3111, COOKIE_SECRET = 'secretik' } = process.env;
+
+app.locals.title = 'CookBook';
+
 app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(ssr);
@@ -34,10 +38,10 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 2,
       httpOnly: true,
     },
-  }),
+  })
 );
 
-app.use('/', indexRoutes);
+app.use('/', mainRouter);
 app.use('/login', authRoutes);
 app.use(isAuth);
 
@@ -46,4 +50,3 @@ app.listen(PORT, (err) => {
   if (err) return console.log('Ошибка запуска сервера.', err.message);
   console.log(`🤖 Сервер запущен на http://localhost:${PORT}`);
 });
-

@@ -6,12 +6,13 @@ const ShowRecipe = require('../views/ShowRecipe');
 // const {  } = require('../../db/models');
 
 router.get('/', (req, res) => {
-  const title = 'Home';
-  res.render(Home, { title });
+  res.render(Home, {});
 });
+
 
 router.get('/recipe/:id', (req, res) => {
   res.render(ShowRecipe, { });
 });
+
 
 module.exports = router;
