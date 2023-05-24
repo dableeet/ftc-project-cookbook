@@ -1,0 +1,80 @@
+.showRecipeWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+}
+
+.showRecipeContainer {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 75%;
+}
+
+.showRecipeHeader {
+    /* background-color: brown; */
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
+.showRecipeHeaderLeftSide {
+    /* background-color: aqua; */
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.showRecipeFoto {
+    background-color: blue;
+    /* width: 100%;
+    height: 90%; */
+}
+
+.showRecipeFavourite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid purple;
+    /* background-color: purple; */
+    /* width: 100%;
+    height: 10%; */
+}
+
+.showRecipeHeaderRightSide {
+    /* background-color: darkgreen; */
+    border: 2px solid green;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+}
+
+.showRecipeTitle {
+    background-color: darkorange;
+    display: flex;
+    justify-content: center;
+    /* width: 100%;
+    height: 10%; */
+}
+
+.showRecipeIngredients {
+    background-color: yellow;
+    /* width: 100%;
+    height: 90%; */
+}
+
+.showRecipeBody {
+    background-color: gray;
+    display: flex;
+    height: 50%;
+    width: 100%;
+}

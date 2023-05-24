@@ -8,9 +8,11 @@ module.exports = function Layout({ children, user, title }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link rel="shortcut icon" href="/assets/favicon.ico" />
         <link href="/css/output.css" rel="stylesheet" />
         <link href="/css/hand.styles.css" rel="stylesheet" />
+        <link href="/css/showRecipe.css" rel="stylesheet" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
@@ -28,7 +30,7 @@ module.exports = function Layout({ children, user, title }) {
         <script defer src="/js/application.js" />
         <title>{title}</title>
       </head>
-      <body className="body">
+      <body className="body h-full">
         <NavBar user={user} />
         {children}
       </body>
