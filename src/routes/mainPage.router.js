@@ -16,11 +16,11 @@ router.get('/', async (req, res) => {
       })
     ).json();
 
-    const imgOnly = recipes.filter((el) => el.image && el);
+    const noNullObj = recipes.filter((el) => el.image && el.instructions && el);
 
     const cardInfo = []
 
-    imgOnly.forEach((el) => {
+    noNullObj.forEach((el) => {
       const info = {
         id: el.id,
         title: el.title,
