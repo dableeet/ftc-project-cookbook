@@ -1,5 +1,5 @@
-const React = require("react");
-const NavBar = require("./NavBar");
+const React = require('react');
+const NavBar = require('./NavBar');
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -10,8 +10,11 @@ module.exports = function Layout({ children, user }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/css/style.css" rel="stylesheet" />
         <link href="/css/output.css" rel="stylesheet" />
+        <link href="/css/showRecipe.css" rel="stylesheet" />
 
-        {/* <script defer src="../path/to/flowbite/dist/flowbite.min.js"></script> */}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+
         <script defer src="/js/auth.js" />
         <title>{ }</title>
       </head>
@@ -24,4 +27,3 @@ module.exports = function Layout({ children, user }) {
     </html>
   );
 };
-

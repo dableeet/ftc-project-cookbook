@@ -1,4 +1,4 @@
-const React = require("react");
+const React = require('react');
 
 module.exports = function NavBar({ user }) {
   return (
@@ -44,7 +44,7 @@ module.exports = function NavBar({ user }) {
           </ul>
         </div>
       </div>
-      <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js" />
+      {/* <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js" /> */}
     </nav>
   );
 };
