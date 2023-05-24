@@ -30,7 +30,7 @@ module.exports = function Layout({ children, user, title }) {
       </head>
       <body className="body">
         <NavBar user={user} />
-        <div className="container my-12 mx-auto px-4 md:px-12">{children}</div>
+        {children}
       </body>
     </html>
   );

@@ -13,6 +13,7 @@ module.exports = function MiniCard({
     <div className="my-1 px-1 md:w-1/2 lg:my-8 lg:mx-3 lg:px-4 lg:w-96" id={id}>
       <article className="overflow-hidden rounded-lg shadow-lg h-106">
         <div className="relative">
+          {user && <>
           <span
             className="material-icons absolute right-2 top-2"
             style={{
@@ -41,6 +42,7 @@ module.exports = function MiniCard({
           >
             favorite_border
           </span>
+          </>}
           <img alt="food_image" className="block w-full" src={image} />
         </div>
 
