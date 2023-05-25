@@ -40,13 +40,13 @@ router.post('/', async (req, res) => {
 
 router.post('/registration', async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { login, email, password } = req.body;
     const sikret = await bcrypt.hash(password, 10);
 
     const [newUser, create] = await Users.findOrCreate({
       where: { email },
       defaults: {
-        name,
+        login,
         email,
         password: sikret,
       },
