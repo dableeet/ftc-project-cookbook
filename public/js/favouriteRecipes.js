@@ -14,7 +14,7 @@ showRecipeFavourite.addEventListener('click', async (event) => {
         showRecipeFavourite.firstChild.remove();
         const inviteBtn = document.createElement('button');
         inviteBtn.name = 'inviteBtn';
-        inviteBtn.classList = 'text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1';
+        inviteBtn.classList = 'text-secondary-700 hover:text-white border border-secondary-700 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1';
         inviteBtn.innerText = 'Add to favoutites';
         inviteBtn.type = 'button';
         showRecipeFavourite.append(inviteBtn);
@@ -36,7 +36,7 @@ showRecipeFavourite.addEventListener('click', async (event) => {
         showRecipeFavourite.firstChild.remove();
         const deleteBtn = document.createElement('button');
         deleteBtn.name = 'deleteBtn';
-        deleteBtn.classList = 'text-white hover:text-secondary-500 border bg-green-400 hover:bg-white hover:border-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1';
+        deleteBtn.classList = 'text-white hover:text-secondary-700 border bg-green-700 hover:bg-white hover:border-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1';
         deleteBtn.innerText = 'Remove from favourites';
         deleteBtn.type = 'button';
         showRecipeFavourite.append(deleteBtn);
