@@ -6,6 +6,7 @@ const Card = require('./MiniCard');
 module.exports = function Main({ cardInfo, title, user }) {
   return (
     <Layout title={title} user={user}>
+      <script src="/js/mainPage.client.js" />
       <div className="container my-12 mx-auto px-4 md:px-12 grid">
         <button
           id="dropdownDefaultButton"
@@ -38,25 +39,52 @@ module.exports = function Main({ cardInfo, title, user }) {
             className="py-2 text-sm text-gray-700 dark:text-gray-200"
             aria-labelledby="dropdownDefaultButton"
           >
-            <li>
-                <div className="flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                  <p className="text-center">
-                    Cooking time
-                  </p>
-                  <span className="material-icons">
-                    expand_less
-                  </span>
-                </div>
+            <li className="px-8 py-2 flex justify-between">
+              {/* <div
+                className="sort-time-btn flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                style={{ cursor: 'pointer' }}
+              >
+                <p className="text-center">Cooking time</p>
+                <span
+                  className="material-icons row-less"
+                  style={{ display: 'none' }}
+                >
+                  expand_less
+                </span>
+                <span
+                  className="material-icons row-more"
+                  style={{ display: 'none' }}
+                >
+                  expand_more
+                </span>
+              </div> */}
+              <button
+                type="button"
+                className="sort-time-btn border border-secondary-400 rounded-full px-4 py-2"
+              >
+                Cooking time
+              </button>
+              <span className="material-icons cursor-default">expand_more</span>
             </li>
             <li>
-                <div className="flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                  <p className="text-center">
-                    Ingredients
-                  </p>
-                  <span className="material-icons">
-                    expand_more
-                  </span>
-                </div>
+              <div
+                className="sort-ingr-btn flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                style={{ cursor: 'pointer' }}
+              >
+                <p className="text-center">Ingredients</p>
+                <span
+                  className="material-icons row-less"
+                  style={{ display: 'none' }}
+                >
+                  expand_less
+                </span>
+                <span
+                  className="material-icons row-more"
+                  style={{ display: 'none' }}
+                >
+                  expand_more
+                </span>
+              </div>
             </li>
           </ul>
         </div>
