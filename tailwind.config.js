@@ -6,8 +6,14 @@ module.exports = {
       height: {
         106: '28rem',
       },
-    },
+      fontSize: {
+        custom: '2rem',
+      },
 
+      width: {
+        custom: '3rem',
+      },
+    },
 
     fontFamily: {
       display: ['Source Serif Pro', 'Georgia', 'serif'],

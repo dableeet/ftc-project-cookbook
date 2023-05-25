@@ -17,7 +17,7 @@ async function submitForm(endpoint, form) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      name: form.name?.value,
+      login: form.login?.value,
       email: form.email.value,
       password: form.password.value,
     }),

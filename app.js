@@ -13,7 +13,7 @@ const isAuth = require('./src/middlewares/isAuth');
 
 const app = express();
 
-const indexRoutes = require('./src/routes/index.routes');
+const favouriteRouter = require('./src/routes/favouritePage.router');
 const authRoutes = require('./src/routes/auth.routes');
 const mainRouter = require('./src/routes/mainPage.router');
 const recipeRouter = require('./src/routes/recipePage.router');
@@ -46,6 +46,7 @@ app.use('/', mainRouter);
 app.use('/login', authRoutes);
 app.use(isAuth);
 app.use('/recipe', recipeRouter);
+app.use('/favourites', favouriteRouter);
 
 dbCheck();
 app.listen(PORT, (err) => {
