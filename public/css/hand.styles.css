@@ -2,6 +2,7 @@ body {
   background-color: rgba(128, 128, 128, 0.69);
 }
 
-.fav-btn .fav-delete-btn {
+.fav-btn,
+.fav-delete-btn {
   width: 3rem;
 }
