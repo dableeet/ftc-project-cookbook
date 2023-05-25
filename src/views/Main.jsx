@@ -39,56 +39,49 @@ module.exports = function Main({ cardInfo, title, user }) {
             className="py-2 text-sm text-gray-700 dark:text-gray-200"
             aria-labelledby="dropdownDefaultButton"
           >
-            <li className="px-8 py-2 flex justify-between">
-              {/* <div
-                className="sort-time-btn flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                style={{ cursor: 'pointer' }}
-              >
-                <p className="text-center">Cooking time</p>
-                <span
-                  className="material-icons row-less"
-                  style={{ display: 'none' }}
-                >
-                  expand_less
-                </span>
-                <span
-                  className="material-icons row-more"
-                  style={{ display: 'none' }}
-                >
-                  expand_more
-                </span>
-              </div> */}
+            <li className="ct-li w-full py-2 flex justify-center items-center">
               <button
                 type="button"
-                className="sort-time-btn border border-secondary-400 rounded-full px-4 py-2"
+                className="sort-time-btn more border border-secondary-400 rounded-full py-2 px-2"
               >
                 Cooking time
               </button>
-              <span className="material-icons cursor-default">expand_more</span>
-            </li>
-            <li>
-              <div
-                className="sort-ingr-btn flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                style={{ cursor: 'pointer' }}
+              <span
+                className="less material-icons cursor-default"
+                style={{ display: 'none' }}
               >
-                <p className="text-center">Ingredients</p>
-                <span
-                  className="material-icons row-less"
-                  style={{ display: 'none' }}
-                >
-                  expand_less
-                </span>
-                <span
-                  className="material-icons row-more"
-                  style={{ display: 'none' }}
-                >
-                  expand_more
-                </span>
-              </div>
+                expand_less
+              </span>
+              <span
+                className="more material-icons cursor-default"
+                style={{ display: 'none' }}
+              >
+                expand_more
+              </span>
+            </li>
+            <li className="ing-li w-full py-2 flex justify-center items-center">
+              <button
+                type="button"
+                className="sort-ingr-btn more border border-secondary-400 rounded-full py-2 px-2"
+              >
+                Ingredients
+              </button>
+              <span
+                className="less material-icons cursor-default"
+                style={{ display: 'none' }}
+              >
+                expand_less
+              </span>
+              <span
+                className="more material-icons cursor-default"
+                style={{ display: 'none' }}
+              >
+                expand_more
+              </span>
             </li>
           </ul>
         </div>
-        <div className="flex flex-wrap justify-between -mx-1 lg:-mx-4 lg:w-auto">
+        <div className="card-box flex flex-wrap justify-between -mx-1 lg:-mx-4 lg:w-auto">
           {cardInfo &&
             cardInfo.map((el) => <Card {...el} user={user} key={el.id} />)}
         </div>

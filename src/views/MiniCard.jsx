@@ -11,7 +11,7 @@ module.exports = function MiniCard({
 }) {
   return (
     <div
-      className="my-1 px-1 md:w-1/2 lg:my-8 lg:mx-3 lg:px-4 lg:w-96 "
+      className="card my-1 px-1 md:w-1/2 lg:my-8 lg:mx-3 lg:px-4 lg:w-96 "
       id={id}
     >
       <article className="overflow-hidden rounded-lg shadow-secondary-500 shadow-2xl h-106 border-2 border-secondary-500">
@@ -19,26 +19,17 @@ module.exports = function MiniCard({
           {user && added ? (
             <>
               <span
-                className="fav-btn material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
-                style={{
-                  fontSize: '2rem',
-                  width: '3rem',
-                  cursor: 'pointer',
-                  display: 'none',
-                }}
+                className="fav-btn cursor-pointer hidden material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
                 id={id}
+                style={{ fontSize: '2rem' }}
               >
                 favorite_border
               </span>
 
               <span
-                className="fav-delete-btn material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
-                style={{
-                  fontSize: '2rem',
-                  width: '3rem',
-                  cursor: 'pointer',
-                }}
+                className="fav-delete-btn cursor-pointer material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
                 id={id}
+                style={{ fontSize: '2rem' }}
               >
                 favorite
               </span>
@@ -46,26 +37,17 @@ module.exports = function MiniCard({
           ) : (
             <>
               <span
-                className="fav-btn material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
-                style={{
-                  fontSize: '2rem',
-                  width: '3rem',
-                  cursor: 'pointer',
-                }}
+                className="fav-btn cursor-pointer material-icons md-36 absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
                 id={id}
+                style={{ fontSize: '2rem' }}
               >
                 favorite_border
               </span>
 
               <span
-                className="fav-delete-btn material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
-                style={{
-                  fontSize: '2rem',
-                  width: '3rem',
-                  cursor: 'pointer',
-                  display: 'none',
-                }}
+                className="fav-delete-btn cursor-pointer hidden material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
                 id={id}
+                style={{ fontSize: '2rem' }}
               >
                 favorite
               </span>
