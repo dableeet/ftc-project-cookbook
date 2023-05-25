@@ -8,6 +8,7 @@ module.exports = {
       },
     },
 
+
     fontFamily: {
       display: ['Source Serif Pro', 'Georgia', 'serif'],
       body: ['Synonym', 'system-ui', 'sans-serif'],

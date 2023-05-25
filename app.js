@@ -16,6 +16,7 @@ const app = express();
 const indexRoutes = require('./src/routes/index.routes');
 const authRoutes = require('./src/routes/auth.routes');
 const mainRouter = require('./src/routes/mainPage.router');
+const recipeRouter = require('./src/routes/recipePage.router');
 
 const { PORT = 3111, COOKIE_SECRET = 'secretik' } = process.env;
 
@@ -38,12 +39,13 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 2,
       httpOnly: true,
     },
-  })
+  }),
 );
 
 app.use('/', mainRouter);
 app.use('/login', authRoutes);
 app.use(isAuth);
+app.use('/recipe', recipeRouter);
 
 dbCheck();
 app.listen(PORT, (err) => {

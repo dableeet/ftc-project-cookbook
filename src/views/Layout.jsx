@@ -27,7 +27,6 @@ module.exports = function Layout({ children, user, title }) {
           rel="stylesheet"
         />
         <script defer src="/js/auth.js" />
-        <script defer src="/js/application.js" />
         <title>{title}</title>
       </head>
       <body className="body h-full bg-primary-100">
