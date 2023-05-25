@@ -6,6 +6,7 @@ const Card = require('./MiniCard');
 module.exports = function Main({ cardInfo, title, user }) {
   return (
     <Layout title={title} user={user}>
+      <script defer src="/js/mainPage.client.js" />
       <div className="container my-12 mx-auto px-4 md:px-12 grid">
         <button
           id="dropdownDefaultButton"
@@ -39,24 +40,44 @@ module.exports = function Main({ cardInfo, title, user }) {
             aria-labelledby="dropdownDefaultButton"
           >
             <li>
-                <div className="flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                  <p className="text-center">
-                    Cooking time
-                  </p>
-                  <span className="material-icons">
-                    expand_less
-                  </span>
-                </div>
+              <div
+                className="sort-time-btn flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                style={{ cursor: 'pointer' }}
+              >
+                <p className="text-center">Cooking time</p>
+                <span
+                  className="material-icons row-less"
+                  style={{ display: 'none' }}
+                >
+                  expand_less
+                </span>
+                <span
+                  className="material-icons row-more"
+                  style={{ display: 'none' }}
+                >
+                  expand_more
+                </span>
+              </div>
             </li>
             <li>
-                <div className="flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                  <p className="text-center">
-                    Ingredients
-                  </p>
-                  <span className="material-icons">
-                    expand_more
-                  </span>
-                </div>
+              <div
+                className="sort-ingr-btn flex justify-between px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                style={{ cursor: 'pointer' }}
+              >
+                <p className="text-center">Ingredients</p>
+                <span
+                  className="material-icons row-less"
+                  style={{ display: 'none' }}
+                >
+                  expand_less
+                </span>
+                <span
+                  className="material-icons row-more"
+                  style={{ display: 'none' }}
+                >
+                  expand_more
+                </span>
+              </div>
             </li>
           </ul>
         </div>
