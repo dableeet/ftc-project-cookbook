@@ -2,16 +2,16 @@ const React = require('react');
 
 module.exports = function NavBar({ user }) {
   return (
-    <nav className="bg-primary-100 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-primary-200 shadow-lg text-secondary-700 border-gray-200 dark:bg-gray-900 dark:border-gray-700 font-display">
+      <div className="max-w-screen-xl flex flex-wrap h-24 items-center justify-between mx-auto p-2">
         <a href="/" className="flex items-center">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8 mr-3"
+            src="/assets/logo2.svg"
+            className="h-20 block"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            CookBook
+          <span className="self-center text-3xl whitespace-nowrap dark:text-white">
+            Easy to cook
           </span>
         </a>
         <button
@@ -37,12 +37,12 @@ module.exports = function NavBar({ user }) {
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex hover:bg-primary-200 flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
-                className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                className="text-3xl bg-primary-200 flex items-center justify-between w-full py-2 pl-3 pr-4 text-secondary-700 rounded hover:text-secondary-700 md:hover:bg-transparent md:border-0 md:hover:text-secondary-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Menu
                 <svg
@@ -65,7 +65,7 @@ module.exports = function NavBar({ user }) {
               >
                 {user ? (
                   <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-400"
+                    className="py-2 text-xl text-gray-700 dark:text-gray-400 text-center"
                     aria-labelledby="dropdownLargeButton"
                   >
                     <li>

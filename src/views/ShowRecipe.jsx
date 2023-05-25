@@ -6,7 +6,7 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
     <Layout user={user}>
       <script defer src="/js/favouriteRecipes.js" />
       <div className="showRecipeWrapper">
-        <div className="showRecipeContainer">
+        <div className="showRecipeContainer bg-primary-50 shadow-secondary-200 shadow-2xl border-2 border-secondary-200 rounded-xl">
 
           <div className="showRecipeHeader">
 
@@ -33,7 +33,7 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
                   </div>
                 ) : (
                   <div id={clearRecipe.id} className="showRecipeFavourite">
-                    <button name="inviteBtn" type="button" className="text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Add to favoutites</button>
+                    <button name="inviteBtn" type="button" className="text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Add to favourites</button>
                   </div>
                 )
               }
@@ -41,11 +41,11 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
 
             <div className="showRecipeHeaderRightSide mx-3 mt-3">
               <div className="showRecipeTitle">
-                <h1 className="text-center text-xl">{clearRecipe.title}</h1>
+                <h1 className="text-center text-xl text-secondary-500 font-display font-black">{clearRecipe.title}</h1>
               </div>
               <div className="showRecipeIngredients ml-5 mt-2">
                 <ul className="list-disc">
-                  <strong>Ingredients:</strong>
+                  <strong className=''>Ingredients:</strong>
                   {clearRecipe.extendedIngredients.map((el) => (
                     <li key={el.id}>{el.original}</li>))}
                 </ul>

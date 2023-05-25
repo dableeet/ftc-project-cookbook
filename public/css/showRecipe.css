@@ -3,18 +3,18 @@
     justify-content: center;
     align-items: center;
     min-height: 80vh;
-    margin-top: 35px;
-    margin-bottom: 35px;
 }
 
 .showRecipeContainer {
-    background-color: white;
+    /*background-color: white;*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 50%;
     height: 75%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .showRecipeHeader {

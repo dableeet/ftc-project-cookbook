@@ -46,6 +46,9 @@ router.put('/favorite/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const selectUser = await Users.findOne({ where: { id: req.session.user.id } });
+    if (!selectUser.favourite) {
+      selectUser.favourite = [];
+    }
     const arrFavourite = selectUser.favourite;
     arrFavourite.push(Number(id));
 
