@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Users, Recipes } = require('../../db/models');
+const { Users, Recipes, sequelize } = require('../../db/models');
 
 const Main = require('../views/Main');
 
@@ -46,9 +46,65 @@ router.get('/', async (req, res) => {
       })
     );
 
-    res.render(Main, { cardInfo });
+    const { favourite } = await Users.findOne({
+      where: { id: req.session.user.id },
+    });
+
+    console.log(favourite);
+
+    const filtered = cardInfo.map((recipe) => {
+      if (favourite.includes(recipe.id)) {
+        recipe.added = true;
+      } else {
+        recipe.added = false;
+      }
+      return recipe;
+    });
+
+    res.render(Main, { cardInfo: filtered });
   } catch (error) {
     console.log(error);
+  }
+});
+
+router.put('/recipe/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const { addToFav } = req.body;
+
+  try {
+    if (addToFav) {
+      await Users.update(
+        {
+          favourite: sequelize.fn(
+            'array_append',
+            sequelize.col('favourite'),
+            id
+          ),
+        },
+        { where: { id: req.session.user.id } }
+      );
+
+      await Users.findOne({
+        where: { id: req.session.user.id },
+      });
+
+      res.json({ updated: true, msg: null });
+    } else {
+      const { favourite } = await Users.findOne({
+        where: { id: req.session.user.id },
+      });
+
+      const fav1 = favourite.filter((el) => el !== Number(id));
+
+      await Users.update(
+        { favourite: fav1 },
+        { where: { id: req.session.user.id } }
+      );
+      res.json({ updated: true, msg: null });
+    }
+  } catch (error) {
+    res.json({ updated: false, msg: error.toString() });
   }
 });
 
