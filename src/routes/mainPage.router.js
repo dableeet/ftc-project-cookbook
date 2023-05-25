@@ -53,7 +53,7 @@ router.get('/', async (req, res) => {
       });
 
       const filtered = cardInfo.map((recipe) => {
-        if (favourite.includes(recipe.id)) {
+        if (favourite?.includes(recipe.id)) {
           recipe.added = true;
         } else {
           recipe.added = false;
