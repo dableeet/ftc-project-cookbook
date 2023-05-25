@@ -8,4 +8,10 @@ router.get('/', (req, res) => {
   res.render(Home, {});
 });
 
+
+router.get('/recipe/:id', (req, res) => {
+  res.render(ShowRecipe, {});
+});
+
+
 module.exports = router;

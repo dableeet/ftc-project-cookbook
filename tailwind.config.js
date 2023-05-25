@@ -1,16 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-
-  content: [
-    "./src/**/*.{jsx,js}",
-    "./ node_modules / flowbite/**/ *.js"
-  ],
+  content: ['./src/**/*.{jsx,js}', './ node_modules / flowbite/**/ *.js'],
   theme: {
     extend: {
       height: {
         106: '28rem',
       },
     },
+
+
     fontFamily: {
       display: ['Source Serif Pro', 'Georgia', 'serif'],
       body: ['Synonym', 'system-ui', 'sans-serif'],
@@ -42,9 +40,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('flowbite/plugin')
-  ],
-}
-
+  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
+};

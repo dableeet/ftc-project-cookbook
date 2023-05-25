@@ -29,7 +29,7 @@ module.exports = function Layout({ children, user, title }) {
         <script defer src="/js/auth.js" />
         <title>{title}</title>
       </head>
-      <body className="body h-full">
+      <body className="body h-full bg-primary-100">
         <NavBar user={user} />
         {children}
       </body>
