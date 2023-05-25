@@ -9,7 +9,6 @@ module.exports = function MiniCard({
   user,
   added,
 }) {
-  console.log(added);
   return (
     <div
       className="my-1 px-1 md:w-1/2 lg:my-8 lg:mx-3 lg:px-4 lg:w-96 "
