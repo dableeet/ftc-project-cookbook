@@ -112,10 +112,10 @@ router.put('/recipe/:id', async (req, res) => {
 });
 
 router.post('/recipe', async (req, res) => {
-  const { ids } = req.body;
+  const { ids, sortBy, sortIn } = req.body;
 
-  try {
-    if (req.session.user) {
+  if (sortBy === 'time' && req.session.user && sortIn === 'more') {
+    try {
       const { favourite } = await Users.findOne({
         where: { id: req.session.user.id },
       });
@@ -136,7 +136,11 @@ router.post('/recipe', async (req, res) => {
       const sort = filtered.sort((a, b) => a.readyInMinutes - b.readyInMinutes);
 
       res.json({ sorted: true, sort, msg: null });
-    } else {
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
+  } else if (sortBy === 'time' && !req.session.user && sortIn === 'more') {
+    try {
       const toSort = await Promise.all(
         ids.map((el) => Recipes.findOne({ where: { id: el } }))
       );
@@ -146,9 +150,134 @@ router.post('/recipe', async (req, res) => {
         .sort((a, b) => a.readyInMinutes - b.readyInMinutes);
 
       res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
     }
-  } catch (error) {
-    res.json({ sorted: false, sort: null, msg: error.toString() });
+  } else if (sortBy === 'ingr' && req.session.user && sortIn === 'more') {
+    try {
+      const { favourite } = await Users.findOne({
+        where: { id: req.session.user.id },
+      });
+
+      const toSort = await Promise.all(
+        ids.map((el) => Recipes.findOne({ where: { id: el }, raw: true }))
+      );
+
+      const filtered = toSort.map((recipe) => {
+        if (favourite.includes(recipe.id)) {
+          recipe.added = true;
+        } else {
+          recipe.added = false;
+        }
+        return recipe;
+      });
+
+      const sort = filtered.sort(
+        (a, b) => a.extendedIngredients.length - b.extendedIngredients.length
+      );
+
+      res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
+  } else if (sortBy === 'ingr' && !req.session.user && sortIn === 'more') {
+    try {
+      const toSort = await Promise.all(
+        ids.map((el) => Recipes.findOne({ where: { id: el } }))
+      );
+
+      const sort = toSort
+        .map((el) => el.get({ plain: true }))
+        .sort(
+          (a, b) => a.extendedIngredients.length - b.extendedIngredients.length
+        );
+
+      res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
+  } else if (sortBy === 'time' && req.session.user && sortIn === 'less') {
+    try {
+      const { favourite } = await Users.findOne({
+        where: { id: req.session.user.id },
+      });
+
+      const toSort = await Promise.all(
+        ids.map((el) => Recipes.findOne({ where: { id: el }, raw: true }))
+      );
+
+      const filtered = toSort.map((recipe) => {
+        if (favourite.includes(recipe.id)) {
+          recipe.added = true;
+        } else {
+          recipe.added = false;
+        }
+        return recipe;
+      });
+
+      const sort = filtered.sort((a, b) => b.readyInMinutes - a.readyInMinutes);
+
+      res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
+  } else if (sortBy === 'time' && !req.session.user && sortIn === 'less') {
+    try {
+      const toSort = await Promise.all(
+        ids.map((el) => Recipes.findOne({ where: { id: el } }))
+      );
+
+      const sort = toSort
+        .map((el) => el.get({ plain: true }))
+        .sort((a, b) => b.readyInMinutes - a.readyInMinutes);
+
+      res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
+  } else if (sortBy === 'ingr' && req.session.user && sortIn === 'less') {
+    try {
+      const { favourite } = await Users.findOne({
+        where: { id: req.session.user.id },
+      });
+
+      const toSort = await Promise.all(
+        ids.map((el) => Recipes.findOne({ where: { id: el }, raw: true }))
+      );
+
+      const filtered = toSort.map((recipe) => {
+        if (favourite.includes(recipe.id)) {
+          recipe.added = true;
+        } else {
+          recipe.added = false;
+        }
+        return recipe;
+      });
+
+      const sort = filtered.sort(
+        (a, b) => b.extendedIngredients.length - a.extendedIngredients.length
+      );
+
+      res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
+  } else if (sortBy === 'ingr' && !req.session.user && sortIn === 'less') {
+    try {
+      const toSort = await Promise.all(
+        ids.map((el) => Recipes.findOne({ where: { id: el } }))
+      );
+
+      const sort = toSort
+        .map((el) => el.get({ plain: true }))
+        .sort(
+          (a, b) => b.extendedIngredients.length - a.extendedIngredients.length
+        );
+
+      res.json({ sorted: true, sort, msg: null });
+    } catch (error) {
+      res.json({ sorted: false, sort: null, msg: error.toString() });
+    }
   }
 });
 

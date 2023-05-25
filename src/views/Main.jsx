@@ -59,7 +59,7 @@ module.exports = function Main({ cardInfo, title, user }) {
                 expand_more
               </span>
             </li>
-            <li className="ing-li w-full py-2 flex justify-center items-center">
+            <li className="ingr-li w-full py-2 flex justify-center items-center">
               <button
                 type="button"
                 className="sort-ingr-btn more border border-secondary-400 rounded-full py-2 px-2"
