@@ -15,7 +15,7 @@ showRecipeFavourite.addEventListener('click', async (event) => {
         const inviteBtn = document.createElement('button');
         inviteBtn.name = 'inviteBtn';
         inviteBtn.classList = 'text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1';
-        inviteBtn.innerText = 'Добавить в избранное';
+        inviteBtn.innerText = 'Add to favoutites';
         inviteBtn.type = 'button';
         showRecipeFavourite.append(inviteBtn);
       }
@@ -37,7 +37,7 @@ showRecipeFavourite.addEventListener('click', async (event) => {
         const deleteBtn = document.createElement('button');
         deleteBtn.name = 'deleteBtn';
         deleteBtn.classList = 'text-white hover:text-secondary-500 border bg-green-400 hover:bg-white hover:border-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1';
-        deleteBtn.innerText = 'Удалить из избранного';
+        deleteBtn.innerText = 'Remove from favourites';
         deleteBtn.type = 'button';
         showRecipeFavourite.append(deleteBtn);
       }

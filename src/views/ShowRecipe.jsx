@@ -11,15 +11,29 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
           <div className="showRecipeHeader">
 
             <div className="showRecipeHeaderLeftSide">
-              <div className="showRecipeFoto mx-2" style={{ backgroundImage: `url(${clearRecipe.image})` }} />
+              <div className="showRecipeFoto m-2" style={{ backgroundImage: `url(${clearRecipe.image})` }} />
+
+              <footer className="flex justify-around">
+                <div className="flex justify-between">
+                  <span className="material-symbols-outlined">kitchen</span>
+                  <p className="text-center">
+                    {clearRecipe.extendedIngredients.length} ingredients
+                  </p>
+                </div>
+                <div className="flex justify-between">
+                  <span className="material-symbols-outlined">timer</span>
+                  <p className="text-center">{clearRecipe.readyInMinutes} min</p>
+                </div>
+              </footer>
+
               {
                 isFavourite ? (
                   <div id={clearRecipe.id} className="showRecipeFavourite">
-                    <button name="deleteBtn" type="button" className="text-white hover:text-secondary-500 border bg-green-400 hover:bg-white hover:border-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Удалить из избранного</button>
+                    <button name="deleteBtn" type="button" className="text-white hover:text-secondary-500 border bg-green-400 hover:bg-white hover:border-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Remove from favourites</button>
                   </div>
                 ) : (
                   <div id={clearRecipe.id} className="showRecipeFavourite">
-                    <button name="inviteBtn" type="button" className="text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Добавить в избранное</button>
+                    <button name="inviteBtn" type="button" className="text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Add to favoutites</button>
                   </div>
                 )
               }
