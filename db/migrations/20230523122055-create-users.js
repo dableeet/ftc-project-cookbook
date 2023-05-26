@@ -15,12 +15,14 @@ module.exports = {
       email: {
         type: Sequelize.STRING,
         unique: true,
+        validate: { isEmail: true },
       },
       password: {
         type: Sequelize.STRING,
       },
       favourite: {
         type: Sequelize.ARRAY(Sequelize.INTEGER),
+        defaultValue: [],
       },
       createdAt: {
         allowNull: false,
