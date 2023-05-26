@@ -8,13 +8,10 @@ router.get('/:id', async (req, res) => {
   try {
     const recipe = await Recipes.findOne({ where: { id } });
     const clearRecipe = recipe.get();
-    if (clearRecipe.instructions.includes('<ol>')) {
-      const a = clearRecipe.instructions.replaceAll('<ol>', '');
-      const b = a.replaceAll('<li>', '');
-      const c = b.replaceAll('</li>', ' ');
-      const d = c.replaceAll('</ol>', '');
-      clearRecipe.instructions = d;
-    }
+    const regExp = /<[^<>]+>/gm;
+
+    clearRecipe.instructions = clearRecipe.instructions.replaceAll(regExp, '');
+
     const favourites = await Users.findOne({ where: { id: req.session.user.id } });
     const clearFavourites = favourites.get();
     const isFavourite = clearFavourites.favourite?.includes(Number(id));
