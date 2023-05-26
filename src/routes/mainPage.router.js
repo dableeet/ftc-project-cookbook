@@ -1,6 +1,5 @@
 const router = require('express').Router();
 
-const { raw } = require('express');
 const { Users, Recipes, sequelize } = require('../../db/models');
 
 const Main = require('../views/Main');

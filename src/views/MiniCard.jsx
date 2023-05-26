@@ -16,36 +16,21 @@ module.exports = function MiniCard({
     >
       <article className="overflow-hidden rounded-lg shadow-secondary-500 shadow-2xl h-106 border-2 border-secondary-500">
         <div className="relative">
-          {user && added ? (
+          {user && (
             <>
               <span
-                className="fav-btn cursor-pointer hidden material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
+                className={`fav-btn cursor-pointer ${
+                  added ? 'hidden' : ''
+                } material-icons md-36 absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 `}
                 id={id}
                 style={{ fontSize: '2rem' }}
               >
                 favorite_border
               </span>
-
               <span
-                className="fav-delete-btn cursor-pointer material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
-                id={id}
-                style={{ fontSize: '2rem' }}
-              >
-                favorite
-              </span>
-            </>
-          ) : (
-            <>
-              <span
-                className="fav-btn cursor-pointer material-icons md-36 absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
-                id={id}
-                style={{ fontSize: '2rem' }}
-              >
-                favorite_border
-              </span>
-
-              <span
-                className="fav-delete-btn cursor-pointer hidden material-icons absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 "
+                className={`fav-delete-btn cursor-pointer ${
+                  added ? '' : 'hidden'
+                } material-icons md-36 absolute right-4 top-4 hover:border-none border-secondary-500 border rounded-full hover:bg-secondary-500 text-center hover:text-primary-50 text-secondary-500 bg-primary-50 `}
                 id={id}
                 style={{ fontSize: '2rem' }}
               >
