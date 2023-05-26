@@ -6,8 +6,7 @@ module.exports = function Registration() {
     <Layout>
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img className="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up your account</h2>
+          <h2 className="mt-10 text-center text-3xl font-display text-secondary-700 leading-9 tracking-tight">Sign up your account</h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -34,39 +33,11 @@ module.exports = function Registration() {
             </div>
 
             <div>
-              <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign up</button>
+              <button type="submit" className="flex w-full justify-center text-white border bg-green-700 hover:text-secondary-700 hover:border-secondary-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign up</button>
             </div>
           </form>
         </div>
       </div>
-
-
-
-      {/* <form name="regForm">
-        <h3>Registration</h3>
-        <input
-          required
-          className=""
-          type="text"
-          name="name"
-          placeholder="Name"
-        />
-        <input
-          required
-          className=""
-          type="email"
-          name="email"
-          placeholder="E-mail"
-        />
-        <input
-          required
-          className=""
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        <button type="submit">Submit</button>
-      </form> */}
     </Layout>
   );
 };

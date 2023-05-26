@@ -87,7 +87,7 @@ module.exports = function NavBar({ user }) {
                   </ul>
                 ) : (
                   <ul
-                    className="py-2 text-sm text-gray-700 dark:text-gray-400"
+                    className="py-2 text-xl text-gray-700 dark:text-gray-400 text-center"
                     aria-labelledby="dropdownLargeButton"
                   >
                     <li>

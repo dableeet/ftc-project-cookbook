@@ -6,7 +6,7 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
     <Layout user={user}>
       <script defer src="/js/favouriteRecipes.js" />
       <div className="showRecipeWrapper">
-        <div className="showRecipeContainer bg-primary-50 shadow-secondary-200 shadow-2xl border-2 border-secondary-200 rounded-xl">
+        <div className="showRecipeContainer bg-primary-50 shadow-secondary-400 shadow-2xl border-2 border-secondary-200 rounded-xl">
 
           <div className="showRecipeHeader">
 
@@ -29,11 +29,11 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
               {
                 isFavourite ? (
                   <div id={clearRecipe.id} className="showRecipeFavourite">
-                    <button name="deleteBtn" type="button" className="text-white hover:text-secondary-500 border bg-green-400 hover:bg-white hover:border-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Remove from favourites</button>
+                    <button name="deleteBtn" type="button" className="text-white hover:text-secondary-700 border bg-green-700 hover:bg-white hover:border-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Remove from favourites</button>
                   </div>
                 ) : (
                   <div id={clearRecipe.id} className="showRecipeFavourite">
-                    <button name="inviteBtn" type="button" className="text-secondary-500 hover:text-white border border-secondary-500 hover:bg-secondary-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Add to favourites</button>
+                    <button name="inviteBtn" type="button" className="text-secondary-700 hover:text-white border border-secondary-700 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Add to favourites</button>
                   </div>
                 )
               }
@@ -41,7 +41,7 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
 
             <div className="showRecipeHeaderRightSide mx-3 mt-3">
               <div className="showRecipeTitle">
-                <h1 className="text-center text-xl text-secondary-500 font-display font-black">{clearRecipe.title}</h1>
+                <h1 className="text-center text-xl text-secondary-700 font-display font-black">{clearRecipe.title}</h1>
               </div>
               <div className="showRecipeIngredients ml-5 mt-2">
                 <ul className="list-disc">
