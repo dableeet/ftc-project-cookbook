@@ -15,13 +15,13 @@ module.exports = function ShowRecipe({ user, clearRecipe, isFavourite }) {
 
               <footer className="flex justify-around">
                 <div className="flex justify-between">
-                  <span className="material-symbols-outlined">kitchen</span>
+                  <span className="material-symbols-outlined text-secondary-600">kitchen</span>
                   <p className="text-center">
                     {clearRecipe.extendedIngredients.length} ingredients
                   </p>
                 </div>
                 <div className="flex justify-between">
-                  <span className="material-symbols-outlined">timer</span>
+                  <span className="material-symbols-outlined text-secondary-600">timer</span>
                   <p className="text-center">{clearRecipe.readyInMinutes} min</p>
                 </div>
               </footer>

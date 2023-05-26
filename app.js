@@ -48,6 +48,10 @@ app.use(isAuth);
 app.use('/recipe', recipeRouter);
 app.use('/favourites', favouriteRouter);
 
+app.get('*', (req, res) => {
+  res.redirect('/');
+})
+
 dbCheck();
 app.listen(PORT, (err) => {
   if (err) return console.log('Ошибка запуска сервера.', err.message);
