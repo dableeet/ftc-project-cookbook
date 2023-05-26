@@ -28,6 +28,7 @@ module.exports = function Layout({ children, user, title }) {
         />
         <script defer src="/js/auth.js" />
         <script defer src="/js/lib/cardHTML.js" />
+        <script defer src="/js/lib/howToSort.js" />
         <title>{title}</title>
       </head>
       <body className="body h-full bg-primary-100">

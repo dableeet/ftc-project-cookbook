@@ -12,13 +12,13 @@ router.get('/', async (req, res) => {
       })
     );
     const user = await Users.findOne({ where: { id: req.session.user.id } });
-    const favourites = user.favourite;
+    const favourites = user.favourite.reverse();
     const cardInfo = [];
     favourites.forEach((id) => {
       for (let i = 0; i < recipesAll.length; i++) {
         if (recipesAll[i].id === id) {
           recipesAll[i].added = true;
-          cardInfo.push(recipesAll[i])
+          cardInfo.push(recipesAll[i]);
         }
       }
     });
@@ -28,6 +28,5 @@ router.get('/', async (req, res) => {
     console.log(error);
   }
 });
-
 
 module.exports = router;

@@ -11,7 +11,7 @@ module.exports = function Main({ cardInfo, title, user }) {
         <button
           id="dropdownDefaultButton"
           data-dropdown-toggle="dropdown"
-          className="font-display text-xl mx-6 w-fit justify-self-start items-center flex text-secondary-700 hover:text-white border border-secondary-700 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          className="font-display text-xl mx-6 w-fit justify-self-start items-center flex text-secondary-700 hover:text-white border border-secondary-700 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg px-5 py-2.5 text-center"
           type="button"
         >
           Sort by
