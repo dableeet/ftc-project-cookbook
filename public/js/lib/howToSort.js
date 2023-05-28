@@ -1,6 +1,6 @@
 async function howToSort(event, sortByStr, sortInStr) {
   const ids = Array.from(document.querySelectorAll('.card')).map((el) => el.id);
-  const { sorted, sort, msg } = await (
+  const { sorted, sort, msg, auth } = await (
     await fetch('/recipe', {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
@@ -13,7 +13,7 @@ async function howToSort(event, sortByStr, sortInStr) {
     cardBox.innerHTML = '';
 
     sort.forEach((el) => {
-      cardBox.insertAdjacentHTML('beforeend', cardHTML(el));
+      cardBox.insertAdjacentHTML('beforeend', cardHTML(el, auth));
     });
 
     if (sortInStr === 'more' && sortByStr === 'time') {

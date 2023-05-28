@@ -7,8 +7,8 @@ module.exports = function Main({ cardInfo, title, user }) {
   return (
     <Layout title={title} user={user}>
       <script src="/js/mainPage.client.js" />
-      <div className="container my-12 mx-auto px-4 md:px-12 grid">
-        <div className="container flex justify-center">
+      <div className="container my-12 mx-auto px-4 md:px-12">
+        <div className="container flex justify-center items-center">
           <button
             id="dropdownDefaultButton"
             data-dropdown-toggle="dropdown"
@@ -32,6 +32,21 @@ module.exports = function Main({ cardInfo, title, user }) {
               />
             </svg>
           </button>
+          {/* <form name="searchForm" className="flex">
+            <input
+              type="text"
+              className="border border-secondary-700 rounded-l-lg border-r-0 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium font-display"
+              name="ingredient"
+              required
+              placeholder="Enter Ingredient"
+            />
+            <button
+              type="submit"
+              className="font-display text-xl text-secondary-700 hover:text-white border border-secondary-700 hover:bg-secondary-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-e-lg px-5 py-2.5 text-center"
+            >
+              Search
+            </button>
+          </form> */}
         </div>
         <div
           id="dropdown"
