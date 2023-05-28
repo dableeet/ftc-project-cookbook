@@ -27,6 +27,7 @@ module.exports = function Layout({ children, user, title }) {
           rel="stylesheet"
         />
         <script defer src="/js/auth.js" />
+        {/* <script defer src="/js/search.client.js" /> */}
         <script defer src="/js/lib/cardHTML.js" />
         <script defer src="/js/lib/howToSort.js" />
         <title>{title}</title>
